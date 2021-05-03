@@ -1,11 +1,11 @@
-Queries1)
-Select pr.Product_ID,pr.Title,f.Format_type,g.Genre_type,i.Available_Quantity
+--Queries 1: Inventory for Each DVD
+Select pr.Produc_ID,pr.Title,f.Format_type,g.Genre_type,i.Available_Quantity
 from Product pr,Format f,Genre g,Inventory i
 where pr.Format_ID=f.Format_ID
 and pr.Genre_ID=g.Genre_ID
 and pr.Product_ID=i.Goods_ID;
 
-Queries2)
+--Queries 2: Compute total amount for Each Purchase
 Select p.Purchase_ID,c.Name,pr.title,pr.cost,pd.quantity,(pr.cost*pd.quantity)"Total Amount"
 from Purchase p,Customer c,Product pr,PurchaseDetails pd
 where p.Purchase_ID=pd.Purchase_ID
@@ -14,7 +14,7 @@ and p.Purchase_ID=pd.Purchase_ID
 and pd.Product_ID=pr.Product_ID
 order by c.Name;     
 
-Queries3)
+--Queries 3: Finding Top Selling DVD
 CREATE VIEW Sales_Info1 As
 Select pr.title,pd.quantity,(pr.cost*pd.quantity)"Amount"
 from Product pr,PurchaseDetails pd
@@ -26,7 +26,7 @@ GROUP BY title;
 Select * from Sales_Info2
 Order by "Total Amount" DESC;
 
-Queries4)
+--Queries 4 : Finding total amount of sales amount achieve by each of the sales consultant
 CREATE VIEW Staff_Info AS
 Select s.name,s.position,pd.quantity,(pr.cost*pd.quantity)"SELL"
 from Staff s,PurchaseDetails pd,Product pr,Purchase p
@@ -40,7 +40,7 @@ Select * from Staff_Info2
 Order by "TOTAL SELL" DESC; 
 
 
-Queries5)
+--Queries 5: Finding the comment/rating given by customer
 Select p.Purchase_ID,c.Name,pr.title,p.Purchase_Date,r.Rating_For_DVD,r.Rating_Date
 from Purchase p, Customer c, Product pr, Rating r,PurchaseDetails pd
 where c.Customer_ID='C01' 
@@ -51,8 +51,6 @@ and c.Customer_ID=r.Customer_ID
 and pd.Product_ID=pr.product_ID;
 
 
-
-Queries5CONTINUE)
 Select p.Purchase_ID,c.Name,pr.title,p.Purchase_Date,co.Comment_ID,co.Comment_Given,co.Comment_Date
 from Purchase p, Customer c, Product pr,PurchaseDetails pd,Comments co
 where c.Customer_ID='C01' 
