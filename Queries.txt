@@ -1,0 +1,70 @@
+Queries1)
+Select pr.Product_ID,pr.Title,f.Format_type,g.Genre_type,i.Available_Quantity
+from Product pr,Format f,Genre g,Inventory i
+where pr.Format_ID=f.Format_ID
+and pr.Genre_ID=g.Genre_ID
+and pr.Product_ID=i.Goods_ID;
+
+Queries2)
+Select p.Purchase_ID,c.Name,pr.title,pr.cost,pd.quantity,(pr.cost*pd.quantity)"Total Amount"
+from Purchase p,Customer c,Product pr,PurchaseDetails pd
+where p.Purchase_ID=pd.Purchase_ID
+and p.Customer_ID=c.Customer_ID
+and p.Purchase_ID=pd.Purchase_ID
+and pd.Product_ID=pr.Product_ID
+order by c.Name;     
+
+Queries3)
+CREATE VIEW Sales_Info1 As
+Select pr.title,pd.quantity,(pr.cost*pd.quantity)"Amount"
+from Product pr,PurchaseDetails pd
+where pd.Product_ID=pr.Product_ID;
+CREATE VIEW Sales_Info2 AS
+Select title,SUM("Amount")"Total Amount"
+from Sales_Info1
+GROUP BY title;
+Select * from Sales_Info2
+Order by "Total Amount" DESC;
+
+Queries4)
+CREATE VIEW Staff_Info AS
+Select s.name,s.position,pd.quantity,(pr.cost*pd.quantity)"SELL"
+from Staff s,PurchaseDetails pd,Product pr,Purchase p
+where s.Staff_ID=p.Staff_ID 
+and pd.Purchase_ID=p.Purchase_ID;
+CREATE VIEW Staff_Info2 As
+Select name,SUM("SELL")"TOTAL SELL"
+from Staff_Info
+GROUP BY name;
+Select * from Staff_Info2
+Order by "TOTAL SELL" DESC; 
+
+
+Queries5)
+Select p.Purchase_ID,c.Name,pr.title,p.Purchase_Date,r.Rating_For_DVD,r.Rating_Date
+from Purchase p, Customer c, Product pr, Rating r,PurchaseDetails pd
+where c.Customer_ID='C01' 
+and c.Customer_ID=p.Customer_ID 
+and p.Purchase_ID=pd.Purchase_ID
+and pd.Details_ID=r.Details_ID
+and c.Customer_ID=r.Customer_ID
+and pd.Product_ID=pr.product_ID;
+
+
+
+Queries5CONTINUE)
+Select p.Purchase_ID,c.Name,pr.title,p.Purchase_Date,co.Comment_ID,co.Comment_Given,co.Comment_Date
+from Purchase p, Customer c, Product pr,PurchaseDetails pd,Comments co
+where c.Customer_ID='C01' 
+and c.Customer_ID=p.Customer_ID 
+and p.Purchase_ID=pd.Purchase_ID
+and pd.Product_ID=pr.product_ID
+and co.Details_ID=pd.Details_ID
+and co.Customer_ID=c.Customer_ID;
+  
+
+
+
+
+
+

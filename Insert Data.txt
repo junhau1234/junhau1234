@@ -1,0 +1,111 @@
+INSERT INTO CUSTOMER
+VALUES('C01','Lee Jun Hau','1,Lorong Sri Nibong,Taman Sri Nibong,40000 Puchong Selangor','jhlee356@gmail.com',018125436709,TO_DATE('10/10/1996','MM/DD/YYYY'));
+INSERT INTO CUSTOMER
+VALUES('C02','Lee ching Hwa','5,Lorong Sri Bayu,Taman Sri Bayu,43200 Kajang Selangor','hwkee123@gmail.com',015354371209,TO_DATE('10/11/1996','MM/DD/YYYY'));
+INSERT INTO CUSTOMER
+VALUES('C03','Tan Yong Siang','23,Lorong Pekakar 2,Taman Pekakar,43000 Semenyeh Selangor','mjlee78@gmail.com',012345678912,TO_DATE('12/23/1987','MM/DD/YYYY'));
+INSERT INTO CUSTOMER
+VALUES('C04','Khor Lim Siang','26,Lorong Pekakar 4,Taman Pekakar,43000 Semenyeh Selangor','asia48@gmail.com',012345678342,TO_DATE('09/25/1963','MM/DD/YYYY'));
+INSERT INTO CUSTOMER
+VALUES('C05','Kang Boooon Siang','43,Lorong Panchor 2,Taman Panchor,42300 Bangsar Selangor','bser78@gmail.com',012345568912,TO_DATE('12/22/1943','MM/DD/YYYY'));
+
+INSERT INTO STAFF
+VALUES ('S01','Kang Yee Man','Director');
+INSERT INTO STAFF
+VALUES ('S02','Wong Zheng Hao','Manager');
+INSERT INTO STAFF
+VALUES ('S03','Tan Chee Wang','Staff');
+INSERT INTO STAFF
+VALUES ('S04','Teoh Meng Zong','Staff');
+INSERT INTO STAFF
+VALUES ('S05','Chow Dao Quan','Staff');
+
+INSERT INTO PURCHASE
+VALUES('P01','C01','S01',TO_DATE('11/1/2019','MM/DD/YY'));
+INSERT INTO PURCHASE
+VALUES('P02','C02','S02',TO_DATE('2/15/2019','MM/DD/YY'));
+INSERT INTO PURCHASE
+VALUES('P03','C03','S05',TO_DATE('12/6/2019','MM/DD/YY'));
+INSERT INTO PURCHASE
+VALUES('P04','C04','S04',TO_DATE('11/7/2019','MM/DD/YY'));
+INSERT INTO PURCHASE
+VALUES('P05','C05','S03',TO_DATE('12/9/2019','MM/DD/YY'));
+
+INSERT INTO FORMAT
+VALUES('F01','DVD');
+INSERT INTO FORMAT
+VALUES('F02','blu-ray');
+
+INSERT INTO Genre
+VALUES('G01','Horror');
+INSERT INTO Genre
+VALUES('G02','sci-fi');
+INSERT INTO Genre
+VALUES('G03','Comedy');
+INSERT INTO Genre
+VALUES('G04','Adventure');
+INSERT INTO Genre
+VALUES('G05','Mystery');
+
+INSERT INTO Product
+VALUES('PR01','AVENGERS','F01','G04','Sebastian Stan',TO_DATE('12/4/2017','MM/DD/YYYY'),49.99);
+INSERT INTO Product
+VALUES('PR02','Conjuring','F02','G01','Ali Baba',TO_DATE('11/3/2017','MM/DD/YYYY'),59.99);
+INSERT INTO Product
+VALUES('PR03','Explorer','F02','G03','Abu and Ahmad',TO_DATE('11/3/2016','MM/DD/YYYY'),39.99);
+INSERT INTO Product
+VALUES('PR04','Aquaman','F01','G01','Triple H',TO_DATE('11/2/2015','MM/DD/YYYY'),19.99);
+INSERT INTO Product
+VALUES('PR05','Transformers','F01','G01','Owen Shaw',TO_DATE('10/4/2013','MM/DD/YYYY'),48.99);
+
+INSERT INTO PurchaseDetails
+VALUES('PD01','P01','PR05',1);
+INSERT INTO PurchaseDetails
+VALUES('PD02','P02','PR03',2);
+INSERT INTO PurchaseDetails
+VALUES('PD03','P03','PR05',2);
+INSERT INTO PurchaseDetails
+VALUES('PD04','P04','PR01',3);
+INSERT INTO PurchaseDetails
+VALUES('PD05','P05','PR02',3);
+
+Insert INTO Rating
+VALUES('R01','C01','PD01','3',TO_DATE('12/2/2019','MM/DD/YY'));
+Insert INTO Rating
+VALUES('R02','C02','PD02','4',TO_DATE('12/5/2019','MM/DD/YY'));
+Insert INTO Rating
+VALUES('R03','C01','PD01','4',TO_DATE('12/8/2019','MM/DD/YY'));
+Insert INTO Rating
+VALUES('R04','C03','PD03','1',TO_DATE('12/7/2019','MM/DD/YY'));
+Insert INTO Rating
+VALUES('R05','C04','PD04','5',TO_DATE('12/9/2019','MM/DD/YY'));
+
+Insert INTO Comments
+VALUES('CO01','PD01','C01','Satisfactory',TO_DATE('12/8/2019','MM/DD/YY'));
+Insert INTO Comments
+VALUES('CO02','PD02','C02','Good',TO_DATE('12/5/2019','MM/DD/YY'));
+Insert INTO Comments
+VALUES('CO03','PD01','C01','Perfection',TO_DATE('12/9/2019','MM/DD/YY'));
+Insert INTO Comments
+VALUES('CO04','PD03','C03','Not Bad',TO_DATE('12/9/2019','MM/DD/YY'));
+Insert INTO Comments
+VALUES('CO05','PD04','C04','Excellent',TO_DATE('12/9/2019','MM/DD/YY'));
+
+INSERT INTO Inventory
+VALUES('I001','PR01',10,TO_DATE('12/3/2019','MM/DD/YYYY'));
+INSERT INTO Inventory
+VALUES('I002','PR02',15,TO_DATE('12/4/2019','MM/DD/YYYY'));
+INSERT INTO Inventory
+VALUES('I003','PR03',20,TO_DATE('11/2/2019','MM/DD/YYYY'));
+INSERT INTO Inventory
+VALUES('I004','PR04',5,TO_DATE('3/1/2019','MM/DD/YYYY'));
+INSERT INTO Inventory
+VALUES('I005','PR05',15,TO_DATE('2/1/2019','MM/DD/YYYY'));
+
+
+
+
+
+
+
+
